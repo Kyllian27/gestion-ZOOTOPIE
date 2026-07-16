@@ -1,4 +1,4 @@
-# systheme de gestion d'un zoo
+# Systheme de gestion d'un zoo
 
 ## ZOOTOPIE
 ![image](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white
