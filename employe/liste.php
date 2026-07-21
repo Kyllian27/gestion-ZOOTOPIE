@@ -1,18 +1,20 @@
 <?php
-require_once("../header.php");
+require_once "../header.php";
 ?>
+
     <div class="container">
         <div class="row mb-3">
             <div class="col">
                 <div class="text-center">
-                    <h1>Liste des employés</h1>
+                    <br><h1>Liste des employés</h1>
                 </div>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <a href="<?= SITE_URL ?>/employe/creat.php" class="btn btn-sm btn-primary">
+                <a href="<?= SITE_URL ?>/employe/create.php" class="btn btn-custom-add">
                     <i class="fa-solid fa-circle-plus"></i> Ajouter un employé
+                </a>
                 </a>
             </div>
         </div>
@@ -37,7 +39,7 @@ require_once("../header.php");
                             <td><?= $employe['nom_emp'] ;?></td>
                             <td><?= $employe['prenom_emp'] ;?></td>
                             <td><?= $employe['poste_emp'] ;?></td>
-                            <td><i class="fa-solid fa-pencil"></i> <i class="fa-solid fa-trash-alt"></i></td>
+                            <td><a class="link-primary" href="<?= SITE_URL; ?>/employe/update.php?id=<?= $employe['id_employe'] ;?>"><i class="fa-solid fa-pencil"></i></a> <a class="link-danger" href="<?= SITE_URL; ?>/employe/result-delete.php?id=<?= $employe['id_employe'] ;?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer l\'employé ?')"><i class="fa-solid fa-trash-alt"></i></a></td>
                         </tr>
                     <?php
                     endforeach;
