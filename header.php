@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <?php
+// Ingrédient de configuration indispensable
 require_once("config.inc.php");
 ?>
 <head>
@@ -47,7 +48,11 @@ require_once("config.inc.php");
         </div>
     </nav>
 </header>
-<body>
+
+<main class="container mt-5">
+    <!-- Le reste de ton application Zoologik s'affichera ici -->
+</main>
+
 <?php
 try{
     $db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USERNAME, DB_PASSWORD);
