@@ -42,6 +42,12 @@ require_once("config.inc.php");
                             <li><a class="dropdown-item" href="<?= SITE_URL;?>/menace/liste.php">Liste des menaces</a></li>
                             <li><a class="dropdown-item" href="<?= SITE_URL; ?>/menace/create-update.php">Ajouter une menace</a></li>
                         </ul>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Aliment</a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="<?= SITE_URL;?>/employe/liste.php">Liste des aliment</a></li>
+                            <li><a class="dropdown-item" href="<?= SITE_URL; ?>/employe/create.php">Ajouter d'un aliment</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
