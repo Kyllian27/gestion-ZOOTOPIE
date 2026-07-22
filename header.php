@@ -5,78 +5,42 @@
 require_once("config.inc.php");
 ?>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoologik</title>
-
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- FontAwesome (Icônes) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Ton fichier CSS personnalisé -->
+    <title>ZooLogik</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
-
-    <style>
-        .navbar {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            padding: 0.8rem 1rem;
-        }
-        .navbar-brand {
-            font-weight: 700;
-            color: #2c3e50;
-            letter-spacing: 0.5px;
-        }
-        .nav-link {
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-        .nav-link:hover {
-            color: #198754 !important; /* Vert Zoologik au survol */
-        }
-    </style>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body>
-
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+<header class="mb-3">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
         <div class="container">
-            <!-- Lien vers l'accueil de ton site -->
-            <a class="navbar-brand d-flex align-items-center" href="<?= SITE_URL; ?>">
-                <i class="fa-solid fa-paw me-2 text-success"></i>Zoologik
-            </a>
-
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="<?= SITE_URL; ?>">ZooLogik</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="<?= SITE_URL; ?>">
-                            <i class="fa-solid fa-house me-1"></i> Accueil
-                        </a>
+                        <a class="nav-link active" aria-current="page" href="<?= SITE_URL; ?>">Accueil</a>
                     </li>
-                    <li class="nav-item">
-                        <!-- Exemple de lien vers une page liste des employés -->
-                        <a class="nav-link" href="<?= SITE_URL; ?>/employes.php">Employés</a>
-                    </li>
-                    <li class="nav-item">
-                        <!-- Exemple de lien vers une page d'ajout -->
-                        <a class="nav-link" href="<?= SITE_URL; ?>/ajouter.php">Ajouter</a>
-                    </li>
-
-                    <!-- Menu Déroulant (Gestion des Actions) -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Actions
+                            Employés
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
-                            <!-- CORRECTION : Le guillemet de fermeture et la balise PHP sont maintenant parfaits -->
-                            <li><a class="dropdown-item" href="<?= SITE_URL; ?>/action.php">Gérer les actions</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Paramètres</a></li>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="<?= SITE_URL;?>/employe/liste.php">Liste des employés</a></li>
+                            <li><a class="dropdown-item" href="<?= SITE_URL; ?>/employe/create.php">Ajouter un employé</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Menaces
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="<?= SITE_URL;?>/menace/liste.php">Liste des menaces</a></li>
+                            <li><a class="dropdown-item" href="<?= SITE_URL; ?>/menace/create-update.php">Ajouter une menace</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -90,16 +54,9 @@ require_once("config.inc.php");
 </main>
 
 <?php
-// Connexion sécurisée à la base de données
-try {
+try{
     $db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USERNAME, DB_PASSWORD);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "<div class='alert alert-danger mt-3 container'>Erreur de connexion : " . htmlspecialchars($e->getMessage()) . "</div>";
+} catch(PDOException $e){
+    echo $e->getMessage();
 }
-?>
-
-<!-- Scripts Bootstrap indispensables au fonctionnement des menus déroulants et du bouton mobile -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

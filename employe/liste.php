@@ -1,20 +1,19 @@
 <?php
-require_once "../header.php";
+require_once("../header.php");
 ?>
 
     <div class="container">
         <div class="row mb-3">
             <div class="col">
                 <div class="text-center">
-                    <br><h1>Liste des employés</h1>
+                    <h1>Liste des employés</h1>
                 </div>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <a href="<?= SITE_URL ?>/employe/create.php" class="btn btn-custom-add">
+                <a href="<?= SITE_URL ?>/employe/create.php" class="btn btn-sm btn-primary">
                     <i class="fa-solid fa-circle-plus"></i> Ajouter un employé
-                </a>
                 </a>
             </div>
         </div>
@@ -22,11 +21,13 @@ require_once "../header.php";
             <div class="col">
                 <table class="table table-hover">
                     <thead>
-                    <th>#</th>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Poste</th>
-                    <th>Actions</th>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Poste</th>
+                        <th>Actions</th>
+                    </tr>
                     </thead>
                     <tbody>
                     <?php
