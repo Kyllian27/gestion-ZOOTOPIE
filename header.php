@@ -60,6 +60,23 @@ try {
                             <li><a class="dropdown-item" href="<?= SITE_URL; ?>/aliment/create-update.php">Ajouter un aliment</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-globe"></i> Géographie
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="<?= SITE_URL;?>/geographie/liste.php">Liste des zones géographique</a></li>
+                            <li><a class="dropdown-item" href="<?= SITE_URL; ?>/geographie/create-update.php">Ajouter un zone géographique</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-children"></i> Famille
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="<?= SITE_URL;?>/famille/liste.php">Liste des familles</a></li>
+                            <li><a class="dropdown-item" href="<?= SITE_URL; ?>/famille/create-update.php">Ajouter une famille</a></li>
+                        </ul>
                 </ul>
             </div>
         </div>
