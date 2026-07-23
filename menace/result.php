@@ -1,4 +1,4 @@
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="col">
             </div>
@@ -12,7 +12,7 @@ require('../header.php');
 if (!empty($_POST['action'])) :
     switch ($_POST['action']) :
         case 'create':
-            $sql='INSERT INTO menace (libelle_menace) VALUES(:libelle_menace)';
+            $sql='INSERT INTO menace (libelle_menace) VALUES(:libelle)';
             $params=[
                     ':libelle'=>$_POST['libelle']
             ];
@@ -43,7 +43,7 @@ if (!empty($sql)) :
     $stmt->execute($params);
     echo "<div class='alert alert-success '>$phrase_reussite </div>";
     }catch (PDOException $e){
-        echo "<div class='alert alert-success'>$e->getMessage</div>";
+        echo "<div class='alert alert-danger'>" . $e->getMessage() ."</div>";
     }
 endif;
 
